@@ -1,0 +1,52 @@
+
+<h1>Hello Prashant Trivedi</h1>
+
+<br>
+<br>
+
+<!-- <form #DemoFile="ngForm" (ngSubmit)="submitForm(DemoFile.value)">
+  <input type="text" name="username" ngModel>
+  <button>submit</button>
+</form>
+<div>
+  <input type="file" (change)="onFileSelected($event)" />
+  <button (click)="onUpload()">Upload File</button>
+</div> -->
+
+<form #DemoFile="ngForm" (ngSubmit)="submitForm(DemoFile.value)">
+  <div>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" ngModel required>
+  </div>
+
+  <div>
+    <label for="file">File:</label>
+    <input type="file" id="file" (change)="onFileSelected($event)" required>
+  </div>
+
+  <button type="submit">Submit</button>
+</form>
+
+<!-- getting all the files -->
+
+<!-- file-upload.component.html -->
+<!-- {{files}} -->
+<!-- file-upload.component.html -->
+
+
+
+<button (click)="getAllFiles()">Fetch Files</button>
+
+<div *ngFor="let file of images">
+  <h1>{{file.username}}</h1>
+  <br>
+  <p>
+    <strong>Name:</strong> {{ file.name }}
+  </p>
+  <img [src]="'http://localhost:8000/uploads/' + file.name" alt="Uploaded Image" width="200" height="200">
+</div>
+
+<br>
+<br>
+
+
